@@ -75,7 +75,8 @@ class NetRequest:
         # return self.session
 
     def get(self, url, header):
-        header['cookie'] = header['cookie'] % (self.sessionId)
+        if self.sessionId != "":
+            header['cookie'] = header['cookie'] % (self.sessionId)
         self.session.get(url, headers=header)
         print(self.session)
         return self.session
@@ -94,6 +95,55 @@ class GymBookHelper:
         self.pwd = pwd
         self.request = NetRequest()
 
+    def getSessionId(self):
+        url = "https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301"
+        headers = {
+            'authority': 'gym.cqnu.edu.cn',
+            'method': 'GET',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'accept-encoding': 'gzip, deflate, br',
+            'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+            'Connection': 'keep-alive',
+            'Host': 'csxrz.cqnu.edu.cn',
+            'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
+            'sec-ch-ua-mobile': '?0',
+            'sec-ch-ua-platform': '"Windows"',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'cross-site',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'
+        }
+        self.request.get(url, header=headers)
+        cookies = self.request.getCookies()
+        if len(cookies) != 0:
+            self.request.setSessionId(cookies[0][0] + "=" + cookies[0][1])
+        else:
+            raise Exception("GymBookHelper Error! %s login failure!" % (self.username))
+
+    def getSessionId(self):
+        url = "https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301"
+        headers = {
+            'authority': 'gym.cqnu.edu.cn',
+            'method': 'GET',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'accept-encoding': 'gzip, deflate, br',
+            'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+            'Connection': 'keep-alive',
+            'Host': 'csxrz.cqnu.edu.cn',
+            'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
+            'sec-ch-ua-mobile': '?0',
+            'sec-ch-ua-platform': '"Windows"',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'cross-site',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'
+        }
+        self.request.get(url, header=headers)
+        cookies = self.request.getCookies()
+        if len(cookies) != 0:
+            self.request.setSessionId(cookies[0][0] + "=" + cookies[0][1])
+        else:
+            raise Exception("GymBookHelper Error! %s login failure!" % (self.username))
 
     def login(self):
         url = "https://gym.cqnu.edu.cn/login.html"
@@ -184,5 +234,4 @@ def readUserInfoFromFile(filename):
 if __name__ == "__main__":
     usersInfo = readUserInfoFromFile("./userInfo.txt")
     jbh = GymBookHelper(usersInfo[0]["name"], usersInfo[0]["pwd"])
-    jbh.login()
-    jbh.chooseTimeRange()
+    jbh.getSessionId()
