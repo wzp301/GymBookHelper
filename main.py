@@ -77,7 +77,7 @@ class NetRequest:
     def get(self, url, header):
         if self.sessionId != "":
             header['cookie'] = header['cookie'] % (self.sessionId)
-        self.session.get(url, headers=header)
+        res = self.session.get(url, headers=header)
         print(self.session)
         return self.session
 
@@ -95,7 +95,7 @@ class GymBookHelper:
         self.pwd = pwd
         self.request = NetRequest()
 
-    def getSessionId(self):
+    def getLoginPage(self):
         url = "https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301"
         headers = {
             'authority': 'gym.cqnu.edu.cn',
@@ -234,4 +234,4 @@ def readUserInfoFromFile(filename):
 if __name__ == "__main__":
     usersInfo = readUserInfoFromFile("./userInfo.txt")
     jbh = GymBookHelper(usersInfo[0]["name"], usersInfo[0]["pwd"])
-    jbh.getSessionId()
+    jbh.getLoginPage()
