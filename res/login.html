@@ -1,0 +1,506 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" >
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<title>统一身份认证及授权访问平台</title>
+		<link rel="icon" href="/cas/favicon.ico"	type="image/x-icon" />
+		<link rel="stylesheet" href="/cas/assets/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="material/material-icons.css">
+	    <link rel="stylesheet" href="css/login0627/common.css">
+	    <link rel="stylesheet" href="css/login0627/index.css">
+		<link href='cs/plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css' type='text/css' rel='stylesheet' />
+		<link rel="stylesheet" type="text/css" href="cs/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="cs/css/style.css">
+		<!--[if IE 8]>
+		<style>
+			.fillloigiiner{
+				background:#fff;
+				filter:Alpha(opacity=80);
+			}
+		</style>
+		<![endif]-->
+	    <style type="text/css">
+
+	    	.third-text{
+	    		text-align: center;
+	    		color : #B4B4B4;
+	    	}
+
+	    	.qq{
+
+	    		background-position: 0 0!important;
+	    		margin-left : 60px;
+	    	}
+
+	    	.qq:hover{
+
+	    		background-position: 0 -54px!important;
+	    	}
+
+	    	.wx{
+
+	    		background-position: -58px 0!important;
+	    		margin : 0 50px;
+	    	}
+
+	    	.wx:hover{
+
+	    		background-position: -58px -54px!important;
+	    	}
+
+	    	.wb{
+
+	    		background-position: -118px 0!important;
+	    	}
+
+	    	.wb:hover{
+
+	    		background-position: -118px -54px!important;
+	    	}
+
+	    	.qywx{
+
+	    		background-position: -237px 0!important;
+	    		margin-right : 60px;
+	    		float : right;
+	    	}
+
+	    	.qywx:hover{
+
+	    		background-position: -237px -54px!important;
+	    	}
+
+	    	.third-icon{
+
+		    	position: relative;
+			    width: 50px;
+			    height: 50px;
+			    background: url(images/third-log-icon.png) no-repeat;
+	    	}
+
+	    	.login_title .login_title_text{
+
+	    		cursor: pointer;
+	    	}
+
+	    	.login_title .login_title_text.active,
+	    	.login_title .login_title_text:hover{
+
+	    		color : #2892d0;
+	    	}
+
+	    	.login_title .login_title_divider{
+
+	    		color : #eee;
+	    	}
+
+	    	.getVcode{
+
+	    		cursor: pointer;
+	    		color : #2892d0;
+	    	}
+
+	    	.getVcode_disable{
+
+	    		color : #ccc;
+	    	}
+
+			.csApp{
+				font-size:16px;
+			}
+
+			.csAppMobile{
+				font-size:14px;
+                width: calc(100vw - 50px);
+			}
+
+			.downloadApp{
+				color: red;
+				float: left;
+				font-size: 12px;
+			}
+            /* 新增 旧版入口样式 */
+			a.old-mh:hover {
+                color: #31708f;
+            }
+            .old-mh {
+                float: right;
+                line-height: 72px;
+                color: #31708f;
+				font-size: 14px;
+				font-weight: 600;
+				text-decoration: underline;
+            }
+	    	.download-code {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+	    </style>
+		<script type="text/javascript">
+			var _systemLogin = function() {
+
+				if ($("#username").val() == null || $("#username").val() == "" || $("#password").val() == null || $("#password").val() == "") {
+
+					alert("用户名和密码不能为空");
+					return;
+				}
+
+				var keyHex = CryptoJS.enc.Utf8.parse('LT-14509218-owrsGfyWfbFmpomZpaYlCefraX9LaK-https://csxrz.cqnu.edu.cn/cas');
+				var encrypted = CryptoJS.DES.encrypt($("#password").val(), keyHex, {
+					mode: CryptoJS.mode.ECB,
+					padding: CryptoJS.pad.Pkcs7
+				});
+
+				$("#password").val(encrypted);
+				$("#loginForm").submit();
+			}
+		</script>
+	    <!--[if lte IE 8]>
+		<script src="/cas/assets/js/html5shiv.min.js"></script>
+		<script src="/cas/assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<!--认证登录界面-->
+		<div class="headerlogin">
+			<img src="cs/img/logored.png" class="redlogoimg">
+            <span class="spanttill">校园门户</span>
+            <!--<a href="http://csrz.cqnu.edu.cn/zfca/login" class="old-mh">旧版门户入口</a>-->
+		</div>
+		<div class="imglogincontaner" style="position: static;">
+			<img class="bgimg">
+			<form id="loginForm" class="login" action="/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301" method="post">
+			<div class="fillloigiiner" style="top:30%">
+				<div class="iconandinputitem">
+					<span class="glyphicon glyphicon-user iconspanpo"></span>
+
+
+
+
+							<input id="username" name="username" class="form-control inputcustom" tabindex="1" onkeydown="javascript: if (event.keyCode==13) _systemLogin();" placeholder="请输入职工号或者学号" accesskey="n" type="text" value="" size="25" autocomplete="off"/>
+
+
+				</div>
+				<div class="iconandinputitem">
+					<span class="glyphicon glyphicon-lock iconspanpo"></span>
+					<input id="password" name="password" class="form-control inputcustom marginbottom" tabindex="2" onkeydown="javascript: if (event.keyCode==13) _systemLogin();" placeholder="默认密码为身份证后6位" type="password" value="" size="25" autocomplete="off"/>
+				</div>
+                                <!--<div class="form-group row has-feedback" id="validatorCode_div" style="display:none;">-->
+                                        <div class="form-group row has-feedback" id="validatorCode_div">
+					<div class="col-md-7 col-xs-7" >
+						<input id="authCode" name="authCode" class="form-control" tabindex="3" onkeydown="javascript: if (event.keyCode==13) _systemLogin();" placeholder="验证码" type="text" value="" size="25" autocomplete="off"/>
+						<input type="text" class="form-control" style="display:none">
+					</div>
+					<div class="col-md-5 col-xs-5">
+						<img src="" title="点击刷新验证码" id="validatorCodeOfLogin" onclick="changeValidatorCode();" style="margin-left:10%;margin-bottom: 2px;cursor: pointer;height: 30px;">
+					</div>
+				</div>
+				<input type="hidden" name="lt" value="LT-14509218-owrsGfyWfbFmpomZpaYlCefraX9LaK-https://csxrz.cqnu.edu.cn/cas" />
+				<input type="hidden" name="execution" value="e2s1" />
+				<input type="hidden" name="_eventId" value="submit" />
+				<input type="hidden" name="isQrSubmit" value="false" id="isQrSubmit"/>
+				<input type="hidden" name="qrValue" value="" id="qrValue"/>
+				<input type="hidden" name="isMobileLogin" value="false" id="isMobileLogin"/>
+				<p class="forgotpassword"><a href="javascript:void(0)" class="downloadApp" onclick="downloadApp()">下载APP</a><a class="textlink forgot"
+											 href="https://csxrz.cqnu.edu.cn:443/mng/forgetPWD.jsp"
+											 tabindex="5" id="changePassword" seed="authcenter-pwd-forget" target="_blank">忘记密码了？</a></p>
+				<button type="button" class="btn btn-default blubtn" onclick="_systemLogin()" id="J-login-btn">登&nbsp;录</button>
+				<div id="tipMsg" >
+					<h6>
+
+					</h6>
+				</div>
+			</div>
+			</form>
+		</div>
+	            <div class="col-md-4  code" id="qrRootDiv">
+	            </div>
+		<div class="footerlogin">@版权所有-重庆师范大学<h3>（为保证体验效果，建议用户使用谷歌、火狐、IE9及以上浏览器，360浏览器请使用极速模式访问）</h3></div>
+		<!-- //authcenter -->
+		<!--[if !IE]> -->
+
+
+
+		<!-- <![endif]-->
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script src="js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="js/jquery-migrate-3.0.0.min.js"></script>
+		<!--[if IE]>
+		<script type="text/javascript">
+ 			// window.jQuery || document.write("<script src='assets/js/jquery1x.min.js' type='text/javascript' >"+"<"+"/script>");
+ 			document.write("<script src='js/jquery-placeholder.js' type='text/javascript' >"+"<"+"/script>");
+ 			document.write("<script src='js/modernizr-custom.js' type='text/javascript' >"+"<"+"/script>");
+		</script>
+		<![endif]-->
+
+		<script src='js/crypto-js/crypto-js.js' type='text/javascript' ></script>
+		<script src='js/jquery.json.min.js' type='text/javascript' ></script>
+		<script src='js/qrcode.min.js' type='text/javascript' ></script>
+		<script src='cs/plugin/jquery/jquery.placeholder.min.js' type='text/javascript' ></script>
+		<script type="text/javascript" src="cs/js/layer.js"></script>
+		<script type="text/javascript">
+
+			/*登陆验证码*/
+		    var validatorCodeOfLogin = function() {
+
+		    	document.getElementById("validatorCodeOfLogin").src = "";
+		    	document.getElementById("validatorCodeOfLogin").src = "https://csxrz.cqnu.edu.cn:443/cas/verCode?random=" + new Date().getTime();
+		    };
+			var changeValidatorCode = function() {
+
+				//换新的验证码
+				validatorCodeOfLogin();
+			};
+
+			function IEVersion() {
+	            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+	            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE<11浏览器
+	            var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; //判断是否IE的Edge浏览器
+	            var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
+	            if(isIE) {
+	                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+	                reIE.test(userAgent);
+	                var fIEVersion = parseFloat(RegExp["$1"]);
+	                if(fIEVersion == 7) {
+	                    return 7;
+	                } else if(fIEVersion == 8) {
+	                    return 8;
+	                } else if(fIEVersion == 9) {
+	                    return 9;
+	                } else if(fIEVersion == 10) {
+	                    return 10;
+	                } else {
+	                    return 6;//IE版本<=7
+	                }
+	            } else if(isEdge) {
+	                return 'edge';//edge
+	            } else if(isIE11) {
+	                return 11; //IE11
+	            }else{
+	                return -1;//不是ie浏览器
+	            }
+	        }
+
+            function IsPC() {
+                var userAgentInfo = navigator.userAgent;
+                var Agents = ["Android", "iPhone",
+                    "SymbianOS", "Windows Phone",
+                    "iPad", "iPod"
+                ];
+                var flag = true;
+                for (var v = 0; v < Agents.length; v++) {
+                    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                return flag;
+            }
+
+            // var downloadApp = function(){
+			// 	if (IsPC()) {
+			// 		layer.msg('<p class="csApp">安卓手机扫下方二维码下载"重庆师大APP"</p><br/><p><img src="cs/img/csApp.png" style="height: 120px;"></p><br/><p class="csApp">苹果手机仅支持网页版访问，在浏览器中打开网址：<a href="http://csxmh.cqnu.edu.cn">http://csxmh.cqnu.edu.cn</a>即可</P>', {
+			// 			time:1000000,
+			// 			offset: ['200px', '362.5px'],
+			// 			btn: ['好的']
+			// 		});
+			// 	} else {
+			// 		layer.msg('<p class="csAppMobile">安卓手机扫下方二维码下载"重庆师大APP"</p><br/><p><img src="cs/img/csApp.png" style="height: 120px;"></p><br/><p class="csAppMobile">苹果手机仅支持网页版访问，在浏览器中打开网址：<a href="http://csxmh.cqnu.edu.cn">http://csxmh.cqnu.edu.cn</a>即可</P>', {
+			// 			time:1000000,
+			// 			btn: ['好的']
+			// 		});
+			// 	}
+			// }
+
+
+            var downloadApp = function(){
+				if (IsPC()) {
+					layer.msg('<p class="csApp"></p><br/><div class="download-code"><img src="cs/img/csApp.png" style="height: 120px;"><p>安卓版下载</p></div><div class="download-code"><img src="cs/img/csApp_ios.png" style="height: 120px;"><p>苹果手机扫码登录</p></div><br/>', {
+						time:1000000,
+						offset: ['30%', '362.5px'],
+						btn: ['关闭']
+					});
+				} else {
+					layer.msg('<p class="csAppMobile"></p><br/><div class="download-code"><img src="cs/img/csApp.png" style="height: 120px;"><p>安卓版下载</p></div><div class="download-code"><img src="cs/img/csApp_ios.png" style="height: 120px;"><p>苹果手机扫码登录</p></div><br/>', {
+						time:1000000,
+						btn: ['关闭']
+					});
+				}
+			}
+
+		    /*登陆验证码#*/
+			$(document).ready( function () {
+
+			    <!--if ($("#msg").text() != ""){-->
+					<!--layer.msg($("#msg").text());-->
+				<!--}-->
+				validatorCodeOfLogin();
+
+                $('input').placeholder({customClass:'my-placeholder'});
+
+                //取得浏览器的userAgent字符串
+                var userAgent = navigator.userAgent;
+                //判断是否IE浏览器
+                var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1;
+                if (isIE) {
+                    var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                    reIE.test(userAgent);
+                    var fIEVersion = parseFloat(RegExp["$1"]);
+                    if (fIEVersion < 10) {
+                        $("#username").focus(function(){
+                            document.getElementById('username').value = '';
+                        });
+                    }
+                }
+
+                    var tru = IsPC();
+                if (tru) {
+                    $(".bgimg").attr("src", "cs/img/bg.png");
+                } else {
+                    $(".bgimg").attr("src", "cs/img/mobilebg.png");
+					$('#changePassword').attr('href','https://csxrz.cqnu.edu.cn/mng/forgetPWDApp.jsp');
+
+				}
+
+				var checkIE = false;	//是否需要检查IE版本
+				var minSupportVer = 10;	//最小支持的IE版本,小于这个版本的IE不被支持
+				//检查浏览器版本
+				if(checkIE){
+					var ieVer = IEVersion();
+					if(ieVer !== "edge" && ieVer !== -1 && ieVer < minSupportVer){
+						window.location.href = "html/judgeBrowser.html"
+					}
+				}
+
+				//websocket
+				/*
+				try{
+
+					var webSocket = new WebSocket('wss://csxrz.cqnu.edu.cn:443/cas/acpWebSocket');
+					webSocket.onerror = function(event){
+						onError(event)
+					};
+
+				    webSocket.onopen = function(event){
+						onOpen(event)
+				    };
+
+					webSocket.onmessage = function(event){
+						onMessage(event)
+					};
+				}catch(err){
+
+					$("#qrRootDiv").remove();
+				}
+				*/
+
+
+
+
+
+			});
+		    var onMessage = function(event){
+
+		    	var msgData = $.evalJSON(event.data);
+		    	if(msgData.type == "OnOpen"){
+
+		    		$("#qrValue").val(msgData.msg);
+		    		var qrInfo = {};
+		    		qrInfo.type = "qrLogin";
+		    		qrInfo.msg = msgData.msg;
+			    	var qrcode = new QRCode(document.getElementById("J-qrcode-img"), {
+			    	    text: $.toJSON(qrInfo),
+			    	    width: 200,
+			    	    height: 200,
+			    	    colorDark : "#0F1867",
+			    	    colorLight : "#ffffff",
+			    	    correctLevel : QRCode.CorrectLevel.H
+			    	});
+
+			    	$("#J-qrcode-img").removeAttr("title");
+		    	}else if(msgData.type == "authSuccess"){
+
+		    		$("#isQrSubmit").val("true");
+		    		$("#loginForm").submit();
+		    	}
+		    }
+
+		    var onOpen = function(event){
+
+		    }
+
+		    var onError = function(event){
+		      //alert(event.data);
+		    }
+
+		    var loginWithAccount = function(){
+
+		    	$("#accountLogin").addClass("active");
+		    	$("#mobileLogin").removeClass("active");
+
+		    	$("#usernameMainDiv").show();
+		    	$("#pwdMainDiv").show();
+
+		    	$("#mobileMainDiv").hide();
+		    	$("#vcodeMainDiv").hide();
+
+		    	$("#isMobileLogin").val("false");
+
+		    	$("#J-send-vcode-btn").hide();
+		    }
+
+			var loginWithMobile = function(){
+
+		    	$("#accountLogin").removeClass("active");
+		    	$("#mobileLogin").addClass("active");
+
+		    	$("#usernameMainDiv").hide();
+		    	$("#pwdMainDiv").hide();
+
+		    	$("#mobileMainDiv").show();
+		    	$("#vcodeMainDiv").show();
+
+		    	$("#isMobileLogin").val("true");
+
+		    	$("#J-send-vcode-btn").show();
+		    }
+
+			var getVcode = function(){
+
+				$(".getVcode").hide();
+				$(".getVcode_disable").show();
+				var djs = 60;
+				$(".getVcode_disable").empty();
+				$(".getVcode_disable").append("重新获取(" + djs + "s)");
+
+				var resendEmailTimer = null;
+				resendEmailTimer = setInterval( function(){
+
+					djs--;
+					$(".getVcode_disable").empty();
+					$(".getVcode_disable").append("重新获取(" + djs + "s)");
+					if(djs <= 0){
+
+						$(".getVcode").show();
+						$(".getVcode_disable").hide();
+						$(".getVcode_disable").empty();
+						$(".getVcode_disable").append("重新发送");
+						clearInterval(resendEmailTimer);
+					}
+				} , 1000);
+			}
+        </script>	
+	</body>
+</html>

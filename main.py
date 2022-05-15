@@ -1,124 +1,67 @@
-import requests
-
-'''
-登陆接口第一次请求数据：
-
-General:
-    Request URL: https://gym.cqnu.edu.cn/login.html
-    Request Method: POST
-    Status Code: 302
-    Remote Address: 202.202.208.198:443
-    Referrer Policy: strict-origin-when-cross-origin
-
-Response Headers:
-    content-language: zh-CN
-    content-length: 0
-    content-type: text/html
-    date: Fri, 15 Oct 2021 08:41:20 GMT
-    location: http://gym.cqnu.edu.cn/yyuser/personal.html;jsessionid=008BC59A1646BC6438434988DFBDBBE3
-    server: RUMP
-    set-cookie: JSESSIONID=008BC59A1646BC6438434988DFBDBBE3; Path=/; HttpOnly
-    set-cookie: errortime=0; Path=/
-    
-Request Headers:
-    :authority: gym.cqnu.edu.cn
-    :method: POST
-    :path: /login.html
-    :scheme: https
-    accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
-    accept-encoding: gzip, deflate, br
-    accept-language: zh-CN,zh;q=0.9,en;q=0.8
-    cache-control: max-age=0
-    content-length: 60
-    content-type: application/x-www-form-urlencoded
-    origin: https://gym.cqnu.edu.cn
-    referer: https://gym.cqnu.edu.cn/login/pre.html
-    sec-ch-ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
-    sec-ch-ua-mobile: ?0
-    sec-ch-ua-platform: "Windows"
-    sec-fetch-dest: document
-    sec-fetch-mode: navigate
-    sec-fetch-site: same-origin
-    sec-fetch-user: ?1
-    upgrade-insecure-requests: 1
-    user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
-    
-Form Data:
-    continueurl=&logintype=sno&dlm=2021210516081&mm=084413&yzm=1
-    
-    continueurl: 
-    logintype: sno
-    dlm: 2021210516081
-    mm: 084413
-    yzm: 1
-'''
-
-#
-class NetRequest:
-    session = None
-    sessionId = ""
-
-    def __init__(self ):
-        self.session = requests.session()  # create session
-
-    def setSessionId(self, sid):
-        self.sessionId = sid
-
-    def getCookies(self):
-        return self.session.cookies.items()
-
-    def post(self, url, header, data):
-        self.session.post(url, headers= header, data = data)
-        print(self.session)
-        for i in self.session.cookies.items():
-            print(i)
-        # return self.session
-
-    def get(self, url, header):
-        if self.sessionId != "":
-            header['cookie'] = header['cookie'] % (self.sessionId)
-        res = self.session.get(url, headers=header)
-        print(self.session)
-        return self.session
+import time
+# from bs4 import BeautifulSoup
+import os
+from util import *
 
 class GymBookHelper:
 
     username = ""
     pwd = ""
+    encode_pwd = ""
+    authcode = ""
+    key = ""
     request = None
     courtNum = 301
-
+    webDataProcessor = None
+    common_header = {
+        'authority': 'gym.cqnu.edu.cn',
+        'method': 'GET',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+        'Connection': 'keep-alive',
+        'Host': 'csxrz.cqnu.edu.cn',
+        'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'
+    }
     def __init__(self, username, pwd):
         if username == "" or pwd == "":
             raise Exception("GymBookHelper Error! username or pwd is empty, Please input right username or pwd!")
         self.username = username
         self.pwd = pwd
         self.request = NetRequest()
+        self.webDataProcessor = WebDataProcessor()
+
+    def getVerCode(self):
+        url = "https://csxrz.cqnu.edu.cn/cas/verCode?random=" + str(int(round(time.time() * 1000)))
+        headers = self.common_header
+        headers.update({
+            'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+        })
+        res = self.request.get(url, header=headers)
+        with open("res/verCode.jpg", 'wb') as f:
+            f.write(res.content)
+        self.authcode = self.webDataProcessor.getAuthcode("res/verCode.jpg")
+        print("getVerCode----authcode = ", self.authcode)
 
     def getLoginPage(self):
         url = "https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301"
-        headers = {
-            'authority': 'gym.cqnu.edu.cn',
-            'method': 'GET',
-            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-            'accept-encoding': 'gzip, deflate, br',
-            'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
-            'Connection': 'keep-alive',
-            'Host': 'csxrz.cqnu.edu.cn',
-            'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
-            'sec-ch-ua-mobile': '?0',
-            'sec-ch-ua-platform': '"Windows"',
+        headers = self.common_header
+        headers.update({
             'sec-fetch-dest': 'document',
-            'sec-fetch-mode': 'navigate',
-            'sec-fetch-site': 'cross-site',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'
-        }
-        self.request.get(url, header=headers)
-        cookies = self.request.getCookies()
-        if len(cookies) != 0:
-            self.request.setSessionId(cookies[0][0] + "=" + cookies[0][1])
-        else:
-            raise Exception("GymBookHelper Error! %s login failure!" % (self.username))
+        });
+        res = self.request.get(url, header=headers)
+        self.key = self.webDataProcessor.parseKeyFromHtml(res.text)
+        self.encode_pwd = self.webDataProcessor.getEncodePwd(self.pwd, self.key)
+        print(self.key)
+        # 验证码识别出错重试
+        self.getVerCode()
+        while len(self.authcode) != 4:
+            self.getVerCode()
 
     def getSessionId(self):
         url = "https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301"
@@ -136,7 +79,6 @@ class GymBookHelper:
             'sec-fetch-dest': 'document',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-site': 'cross-site',
-            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'
         }
         self.request.get(url, header=headers)
         cookies = self.request.getCookies()
@@ -146,50 +88,37 @@ class GymBookHelper:
             raise Exception("GymBookHelper Error! %s login failure!" % (self.username))
 
     def login(self):
-        url = "https://gym.cqnu.edu.cn/login.html"
-        headers = {
-        'authority' : 'gym.cqnu.edu.cn',
-        'method': 'POST',
-        'path': '/login.html',
-        'scheme': 'https',
-        'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
-        'accept-encoding': 'gzip, deflate, br',
-        'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8',
-        'cache-control': 'max-age=0',
-        'content-length': '60',
-        'contenttype': 'application/x-www-form-urlencoded',
-        'origin': 'https://gym.cqnu.edu.cn',
-        'referer': 'https://gym.cqnu.edu.cn/login/pre.html',
-        'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"',
-        'sec-ch-ua-mobile': '?0',
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'same-origin',
-        'sec-fetch-user': '?1',
-        'upgrade-insecure-requests': '1',
-        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'
-        }
+        # url = "https://csxrz.cqnu.edu.cn/cas/login;jsessionid={session_id}?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301".format(session_id = self.request.getLoginBeforeSessionId())
+        url = "https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301"
         data = {
-            'continueurl':'',
-            'logintype': 'sno',
-            'dlm': self.username,
-            'mm': self.pwd,
-            'yzm': '1'
+            'username': self.username,
+            'password': self.encode_pwd,
+            'authCode': self.authcode,
+            'It': self.key,
+            "execution": "e1s1",
+            "_eventId": "submit",
+            'isQrSubmit': 'false',
+            'qrValue': '',
+            'isMobileLogin': 'false'
         }
+        headers = self.common_header
+        headers.update({
+            'method': 'POST',
+            'scheme': 'https',
+            'content-length': str(self.request.getContentLength(data)),
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'contenttype': 'application/x-www-form-urlencoded',
+            'origin': 'https://gym.cqnu.edu.cn',
+            'referer': 'https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301',
+            'sec-fetch-site': 'same-origin',
+            'sec-fetch-user': '?1',
+            'upgrade-insecure-requests': '1',
+        });
         # 发送登陆请求
-        self.request.post(url, headers, data)
-        # 获取服务器返回的JSESSIONID
-        cookies = self.request.getCookies()
-        sid = None
-        for cookie in cookies:
-            if cookie[0] == "JSESSIONID":
-                sid = cookie[1]
-        if sid == None:
-            raise Exception("GymBookHelper Error! %s login failure!" % (self.username))
-        # 保存JSESSIONID到网络请求对象中
-        self.request.setSessionId(sid)
-
+        res = self.request.post(url, headers, data=data)
+        with open("./res/login_res.html", 'w', encoding='utf-8') as f:
+            f.write(res.text)
+        print(res)
     def chooseTimeRange(self):
         url = "https://gym.cqnu.edu.cn/login.html?id=" + str(self.courtNum)
         headers = {
@@ -232,6 +161,7 @@ def readUserInfoFromFile(filename):
     return usersInfo
 
 if __name__ == "__main__":
-    usersInfo = readUserInfoFromFile("./userInfo.txt")
-    jbh = GymBookHelper(usersInfo[0]["name"], usersInfo[0]["pwd"])
+    # usersInfo = readUserInfoFromFile("./userInfo.txt")
+    jbh = GymBookHelper("2021210516081", "084413")
     jbh.getLoginPage()
+    jbh.login()

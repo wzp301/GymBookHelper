@@ -1,0 +1,86 @@
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
+{}
+
+*************************************************************
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/verCode?random=1650964564244
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'}
+{'JSESSIONID': '04EB5E916E56A532A75B4E6BFF07C082-n1'}
+
+*************************************************************
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{'username': '2021210516081', 'password': 'r6uq9gYLIR0=', 'authCode': 'xx2e', 'It': 'LT-14739632-ZgF3fOTGmmaGcMk1fkbELurUxidCFm-https://csxrz.cqnu.edu.cn/cas', 'execution': 'e1s1', '_eventId': 'submit', 'isQrSubmit': 'false', 'qrValue': '', 'isMobileLogin': 'false'}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'POST', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'same-origin', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'scheme': 'https', 'content-length': '221', 'contenttype': 'application/x-www-form-urlencoded', 'origin': 'https://gym.cqnu.edu.cn', 'referer': 'https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301', 'sec-fetch-user': '?1', 'upgrade-insecure-requests': '1'}
+{'JSESSIONID': '04EB5E916E56A532A75B4E6BFF07C082-n1'}
+
+*************************************************************
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
+{}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/verCode?random=1650964950005
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'}
+{'JSESSIONID': '03257E90B08B0BC900E70AED82A708DA-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{'username': '2021210516081', 'password': 'jHdNZuczguU=', 'authCode': 'pgeg', 'It': 'LT-14774257-2Zn311txnnk6BfOgkXkdOl5gei3QmL-https://csxrz.cqnu.edu.cn/cas', 'execution': 'e1s1', '_eventId': 'submit', 'isQrSubmit': 'false', 'qrValue': '', 'isMobileLogin': 'false'}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'POST', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'same-origin', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'scheme': 'https', 'content-length': 221, 'contenttype': 'application/x-www-form-urlencoded', 'origin': 'https://gym.cqnu.edu.cn', 'referer': 'https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301', 'sec-fetch-user': '?1', 'upgrade-insecure-requests': 1}
+{'JSESSIONID': '03257E90B08B0BC900E70AED82A708DA-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
+{}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/verCode?random=1650965529395
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'}
+{'JSESSIONID': '9E7E9979BC31DD8B7E5498021C735EE7-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{'username': '2021210516081', 'password': 'r6uq9gYLIR0=', 'authCode': 'ncci', 'It': 'LT-14739859-CPYX7XuV7cGHEVvRbgxnlwPFrkGxQ7-https://csxrz.cqnu.edu.cn/cas', 'execution': 'e1s1', '_eventId': 'submit', 'isQrSubmit': 'false', 'qrValue': '', 'isMobileLogin': 'false'}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'POST', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'same-origin', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'scheme': 'https', 'content-length': '221', 'contenttype': 'application/x-www-form-urlencoded', 'origin': 'https://gym.cqnu.edu.cn', 'referer': 'https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301', 'sec-fetch-user': '?1', 'upgrade-insecure-requests': '1'}
+{'JSESSIONID': '9E7E9979BC31DD8B7E5498021C735EE7-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
+{}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/verCode?random=1652606553926
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'}
+{'JSESSIONID': '949D0EDD8C172E318FFFAFD3345F7809-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{'username': '2021210516081', 'password': 'pOlq8k7B/HY=', 'authCode': 'jh1h', 'It': 'LT-83899-udu4zDtQVfLM9ShVh3dNC0QFGQCbBV-https://csxrz.cqnu.edu.cn/cas', 'execution': 'e1s1', '_eventId': 'submit', 'isQrSubmit': 'false', 'qrValue': '', 'isMobileLogin': 'false'}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'POST', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'same-origin', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'scheme': 'https', 'content-length': '220', 'contenttype': 'application/x-www-form-urlencoded', 'origin': 'https://gym.cqnu.edu.cn', 'referer': 'https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301', 'sec-fetch-user': '?1', 'upgrade-insecure-requests': '1'}
+{'JSESSIONID': '949D0EDD8C172E318FFFAFD3345F7809-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
+{}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/verCode?random=1652607199721
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'}
+{'JSESSIONID': '76FBB7749AFA3724D55C39DB3CDDC1BC-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/verCode?random=1652607247039
+{}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'GET', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'cross-site', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'}
+{'JSESSIONID': '76FBB7749AFA3724D55C39DB3CDDC1BC-n1'}
+*************************************************************
+https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301
+{'username': '2021210516081', 'password': 'pOlq8k7B/HY=', 'authCode': '3cgz', 'It': 'LT-83989-WbeAmHaAbkvx7Hr4RVQOoWb3p7fjaJ-https://csxrz.cqnu.edu.cn/cas', 'execution': 'e1s1', '_eventId': 'submit', 'isQrSubmit': 'false', 'qrValue': '', 'isMobileLogin': 'false'}
+{'authority': 'gym.cqnu.edu.cn', 'method': 'POST', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6', 'Connection': 'keep-alive', 'Host': 'csxrz.cqnu.edu.cn', 'sec-ch-ua': '"Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"', 'sec-ch-ua-mobile': '?0', 'sec-ch-ua-platform': '"Windows"', 'sec-fetch-dest': 'document', 'sec-fetch-mode': 'navigate', 'sec-fetch-site': 'same-origin', 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'scheme': 'https', 'content-length': '220', 'contenttype': 'application/x-www-form-urlencoded', 'origin': 'https://gym.cqnu.edu.cn', 'referer': 'https://csxrz.cqnu.edu.cn/cas/login?service=https://gym.cqnu.edu.cn/app/product/show.html?id=301', 'sec-fetch-user': '?1', 'upgrade-insecure-requests': '1'}
+{'JSESSIONID': '76FBB7749AFA3724D55C39DB3CDDC1BC-n1'}
